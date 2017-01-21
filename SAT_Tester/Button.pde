@@ -1,18 +1,65 @@
-class Button {  
-color c;
+class Button{
+
+float bColor;
+float xPos, yPos;
+float bDiameter;
+
+ Button() {
+  bColor = 100;
+  xPos = width/2;
+  yPos = height/2;
+  bDiameter = 40; 
+ }
+ 
+ Button(float tColor, float txPos, float tyPos, float tDiameter) {
+  bColor = tColor;
+  xPos = txPos;
+  yPos = tyPos;
+  bDiameter = tDiameter; 
+ }
+ 
+ void display() {
+ ellipse(xPos, yPos, bDiameter, bDiameter);
+ }
+ 
+ void highlight(){
+  if (overCircle() == true) {
+    fill(bColor + 20);
+  }
+  else {
+    fill(bColor);
+  }
+ }
+ 
+ 
+
+boolean overCircle() {
+  float disX = xPos - mouseX;
+  float disY = yPos - mouseY;
+  if (sqrt(sq(disX) + sq(disY)) < bDiameter/2 ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+}
+
+class ButtonRect {  
+float bColor;
 float xPos, yPos;
 float bLength, bWidth;
 
- Button() {
-  color c = color(100);
+ ButtonRect() {
+  bColor = 100;
   xPos = width/2;
   yPos = height/2;
   bLength = 40; 
   bWidth = 20;
  }
  
- Button(float tColor, float txPos, float tyPos, float tLength, float tWidth) {
-  color c = color(tColor);
+ ButtonRect(float tColor, float txPos, float tyPos, float tLength, float tWidth) {
+  bColor = tColor;
   xPos = txPos;
   yPos = tyPos;
   bLength = tLength; 
@@ -25,11 +72,10 @@ float bLength, bWidth;
  
  void highlight(){
   if (overRect() == true) {
-    println("lll");
-    fill(c + 20);
+    fill(bColor + 20);
   }
   else {
-    fill(c);
+    fill(bColor);
   }
  }
  
