@@ -1,19 +1,14 @@
-Button button;
-Button button1;
-ButtonRect buttonrect;
+ButtonRect button;
+
 
 void setup() {
-   size(800,800); 
-   button = new Button(200, 200, 200, 200);
-   button1 = new Button(10, 600, 600, 200);
-   buttonrect = new ButtonRect();
+  background(30);
+   size(1000, 1000);
+   surface.setResizable(true);
 }
 
 void draw() {
-  button.highlight();
-  button.display();
-  button1.highlight(); 
-  button1.display();
-  buttonrect.highlight();
-  buttonrect.display();
-}
+    button = new ButtonRect(200, width/5, height -  height/2, 200, 100, "A");
+    button.highlight();
+    button.display();
+  }
