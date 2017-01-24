@@ -1,5 +1,4 @@
-ButtonRect button;
-
+Question question;
 
 void setup() {
   background(30);
@@ -8,7 +7,5 @@ void setup() {
 }
 
 void draw() {
-    button = new ButtonRect(200, width/5, height -  height/2, 200, 100, "A");
-    button.highlight();
-    button.display();
+    question = new Question();
   }
