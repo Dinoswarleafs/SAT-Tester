@@ -80,7 +80,7 @@ String bText;
  
  void highlight(){
   if (overCircle() == true && isHighlight == true) {
-    fill(bColor - 60);
+    fill(bColor + 60);
   }
   else {
     fill(bColor);
